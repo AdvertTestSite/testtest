@@ -35,14 +35,13 @@
 <body>
     <h1>Autoryzacja Aplikacji Twitch</h1>
     <p>Kliknij przycisk poniżej, aby autoryzować swoją aplikację na platformie Twitch:</p>
-    <button id="authButton">Autoryzuj aplikację</button>
+    <button id="authButton">Autoryzuj</button>
     
+    <script src="config.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Konfiguracja danych autoryzacji
-            const clientId = '0s0w13nfmerk8aq9gbrob31m8k1bqo';
-            const redirectUri = 'https://www.twitch.tv/wysokozmineralizowanawoda';
-            const scope = 'user:read:email channel:read:redemptions channel:manage:redemptions';
+            const { clientId, redirectUri, scope } = config;
 
             const authUrl = `https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=${scope}`;
 
