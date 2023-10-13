@@ -2,6 +2,34 @@
 <html>
 <head>
     <title>Autoryzacja Aplikacji Twitch</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Kolor tła */
+            font-family: Arial, sans-serif; /* Wybierz odpowiednią czcionkę */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #6441a5; /* Kolor tła nagłówka */
+            color: #fff; /* Kolor tekstu nagłówka */
+            padding: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+        button {
+            background-color: #6441a5; /* Kolor tła przycisku */
+            color: #fff; /* Kolor tekstu przycisku */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #7d56c2; /* Kolor tła przycisku po najechaniu myszą */
+        }
+    </style>
 </head>
 <body>
     <h1>Autoryzacja Aplikacji Twitch</h1>
@@ -12,18 +40,14 @@
         document.addEventListener("DOMContentLoaded", function() {
             // Konfiguracja danych autoryzacji
             const clientId = '0s0w13nfmerk8aq9gbrob31m8k1bqo';
-            const redirectUri = 'https://www.twitch.tv/wysokozmineralizowanawoda'; // Tutaj wklej swój URL przekierowania
-            const scope = 'user:read:email channel:read:redemptions channel:manage:redemptions'; // Dodaj wymagane uprawnienia Twitch
+            const redirectUri = 'https://www.twitch.tv/wysokozmineralizowanawoda';
+            const scope = 'user:read:email channel:read:redemptions channel:manage:redemptions';
 
-            // URL autoryzacji
             const authUrl = `https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=${scope}`;
 
-            // Pobieramy przycisk autoryzacji
             const authButton = document.getElementById('authButton');
 
-            // Dodajemy obsługę kliknięcia na przycisk
             authButton.addEventListener('click', function() {
-                // Przekierowanie użytkownika na stronę autoryzacji Twitch
                 window.location.href = authUrl;
             });
         });
