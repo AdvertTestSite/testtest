@@ -1,8 +1,8 @@
 // config.js
-const clientId = 'twójClientId';
+const config = {
+    clientId: '0s0w13nfmerk8aq9gbrob31m8k1bqo',
+    redirectUri: 'https://www.twitch.tv/wysokozmineralizowanawoda',
+    scope: 'user:read:email channel:read:redemptions channel:manage:redemptions'
+};
 
-// Możesz również dodać inne zmienne konfiguracyjne, jeśli to konieczne
-const redirectUri = 'https://www.twitch.tv/wysokozmineralizowanawoda';
-const scope = 'user:read:email channel:read:redemptions channel:manage:redemptions';
-
-export { clientId, redirectUri, scope };
+export default config;
